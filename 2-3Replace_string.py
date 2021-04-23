@@ -1,0 +1,5 @@
+s=input("Введите строку\n")
+source=input("Введите строку которую хотите заменить\n")
+target=input("Введите на что будем менять\n")
+s=s.replace(source,target)
+print(s)
