@@ -20,3 +20,8 @@ SELECT LANG
 FROM Users
 WHERE TELEGRAM_ID = '{}'
 '''
+chk_user='''
+SELECT USER_NAME
+FROM Users
+WHERE TELEGRAM_ID = '{}'
+'''
