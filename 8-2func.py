@@ -13,8 +13,11 @@ def start ( update , context):
     conn = sqlite3.connect('database.sqlite')
     cursor = conn.cursor()
     user_id, text, first_name = user_inf(update,context)
-    cursor.execute(reg_in_table.format(user_id,first_name))
-    conn.commit()
+    chk = cursor.execute(lang_in_table.format(user_id)).fetchall()
+    chk=chk[0][0]
+    if chk=='':
+        cursor.execute(reg_in_table.format(user_id,first_name))
+        conn.commit()
     b = [
         InlineKeyboardButton(text='Uzb', callback_data='uzb'),
         InlineKeyboardButton(text='Rus', callback_data='rus')]
